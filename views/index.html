@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+    <style> /* Other color palette
+        :root {
+          --defblue: #3D405B;
+          --green-blueish: #81B29A;
+          --sunsent: #F2CC8F;
+          --eggshell: #F4F1DE;
+          --burntsel: #E07A5F;
+        } */
+        
+        * {
+            box-sizing: border-box;
+          }
+          
+          :root {
+            --ox-blue: #00243F;
+            --indigo-1: #013A63;
+            --indigo-2: #01497C;
+            --indigo-3: #014F86;
+            --ucla-blue: #2A6F97;
+            --cerulean: #2C7DA0;
+            --air-force: #468FAF;
+            --air-superiority: #61A5C2;
+            --sky-blue: #89C2D9;
+            --light-blue: #A9D6E5;
+          }
+          :root {
+            --background-color: var(--sky-blue);
+            --text-color: var(--ox-blue);
+            --nav-bar: var(--air-force);
+            --accent-color: var(--ucla-blue);
+            --accent-text: var(--light-blue);
+            --accent-hover: var(--air-superiority);
+            --accent-htext: var(--indigo-1);
+            --text-box: var(--indigo-3);
+          }
+          
+          body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+          }
+          a {
+            text-decoration: none;
+            color: var(--text-color);
+          }
+    
+          #h1Welcome {
+            text-align: center;
+            margin-top: 2vh;
+          }
+          #h2Welcome {
+            text-align: center;
+            margin-top: 2vh;
+          }
+          #h3Welcome {
+            text-align: center;
+            color: red;
+            margin-top: 2vh;
+          }
+          .container {
+            display: block;
+          }</style>
+</head>
+<body>
+  <h1 id="h1Welcome">Server Test!</h1>
+  <h2 id="h2Welcome">If you are here you are in 'localhost:5000/'</h2>
+  <h3 id="h3Welcome">So the server must be working!!!</h3>
+   <div class="container">
+
+    <div class="left">
+        <ul>
+            <li><a href="http://localhost:5000/">Click for ('/')</a></li>
+
+        </ul>
+    </div>
+    <div class="right">
+
+    </div>
+    </div>
+   
+    <script src="./app.js"></script>
+</body>
+</html>
