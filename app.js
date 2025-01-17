@@ -1,45 +1,40 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
+const PORT = process.env.PORT || 8080 // Port and Back up port this way I know if its workings
 const connect = require('./config/conn')
 connect()
+
+const initialPokemon = require('./config/pokemon');
+const pokemonSchema = require('./models/pokemonSchemas');
+const pokekemonRoutes = require('./routes/pokemonRoute');
+
 app.use(express.json())
-// const conn = require("./database/conn.js")
-// conn();
-//port stuff
-//Made the fallback port different to test that I installed dotenv properly
 
-
-// Data requirements for the API
-// const assignment = require('./data/assignments');
-// const assignmentRouters = require('./routes/assignmentsRoutes.js');
 
 
 //midware
-// app.use('/api/assignments', assignmentRouters)
-
-
-// get localhost landing
-//***//
+app.use('/api/pokemon', pokekemonRoutes)
 
 
 app.get('/', (req, res) => {
     res.status(200);
     res.send("welcome to the homepage");
 }) 
-//***//
 
 
-
-
-
-
-
-////////////// Port and Error
-app.use((req, res) => {
-    res.status(404)
-    res.json("404: Not Found");
+//This function injects the seed data
+app.get('/pokemon/pokemons', async (req, res)=> {
+    try {
+        await pokemonSchema.deleteMany({});
+        await pokemonSchema.create(initialPokemon)
+        res.json(initialPokemon);
+    }
+    catch (error) {
+        console.log(error);
+    }
 })
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
