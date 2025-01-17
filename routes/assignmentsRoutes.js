@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const assignments = require('../data/assignments');
 
 //assingments routes!
 router.use(express.json())

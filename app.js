@@ -1,28 +1,29 @@
-const express = require('express');
-const app = express();
 require('dotenv').config()
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 5000
+const connect = require('./config/conn')
+connect()
+app.use(express.json())
+// const conn = require("./database/conn.js")
+// conn();
 //port stuff
 //Made the fallback port different to test that I installed dotenv properly
 const PORT = process.env.PORT || 5050;
 
 
 // Data requirements for the API
-const assignment = require('./data/assignments');
-const assignmentRouters = require('./routes/assignmentsRoutes.js');
+// const assignment = require('./data/assignments');
+// const assignmentRouters = require('./routes/assignmentsRoutes.js');
 
 
 //midware
-app.use('/api/assignments', assignmentRouters)
+// app.use('/api/assignments', assignmentRouters)
 
-//
-
-app.use(express.json())
 
 // get localhost landing
 //***//
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/views/index.html')
-})
+
 
 app.get('/', (req, res) => {
     res.status(200);
