@@ -1,7 +1,6 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 5000
 const connect = require('./config/conn')
 connect()
 app.use(express.json())
@@ -9,7 +8,6 @@ app.use(express.json())
 // conn();
 //port stuff
 //Made the fallback port different to test that I installed dotenv properly
-const PORT = process.env.PORT || 5050;
 
 
 // Data requirements for the API
